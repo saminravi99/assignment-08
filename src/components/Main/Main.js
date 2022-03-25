@@ -9,7 +9,13 @@ const Main = () => {
 
     const [visit, setVisit] = useState([]);
 
-    console.log(visit);
+    const [random, setRandom] = useState(-1);
+
+    console.log(random);
+
+    // console.log(visit);
+
+    //Function to Add the visitng Countries
 
     const addToVisit = (props) => {
         let newVisit = []
@@ -32,6 +38,13 @@ const Main = () => {
         setVisit(newVisit);
     }
 
+    // Function to choose random countries from the visiting countries array
+
+    const chooseRandom = () => {
+        let random = Math.floor(Math.random() * visit.length);
+        setRandom(random);
+    }
+
     useEffect(() => {
         fetch(`data.json`)
             .then(res => res.json())
@@ -48,6 +61,14 @@ const Main = () => {
         )
     })
 
+    //Function to clear the list of visiting countries
+
+    const clearList = () => {
+        setVisit([]);
+        setRandom(-1);
+    }
+
+
     return (
         <div className="row d-flex flex-lg-row flex-column-reverse mt-4 mx-auto">
             <div className="col col-md-9 mt-lg-0 mt-5 country-list">
@@ -58,6 +79,9 @@ const Main = () => {
             <div className="col col-md-3 mx-auto mt-lg-0 mt-4 visiting-list">
                 <Visit
                     visit={visit}
+                    chooseRandom={chooseRandom}
+                    random={random}
+                    clearList={clearList}
                 ></Visit>
             </div>
         </div>
