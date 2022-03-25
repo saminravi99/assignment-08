@@ -12,11 +12,24 @@ const Main = () => {
     console.log(visit);
 
     const addToVisit = (props) => {
-        if(visit.length < 4){
-        setVisit([...visit, props]);
-        } else{
+        let newVisit = []
+
+        let exist = visit.find(country => country.country === props.country);
+
+        if(visit.length >= 4){
             alert("You can only choose 4 countries to visit");
+            newVisit = [...visit];
+
+        } else if (!exist) {
+            newVisit = [...visit, props];
+        } else {
+            alert("You have already chosen this country");
+            visit.filter(country => country.country !== props.country);
+            newVisit = [...visit];
         }
+
+        
+        setVisit(newVisit);
     }
 
     useEffect(() => {

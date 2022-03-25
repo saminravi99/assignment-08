@@ -3,9 +3,9 @@ import './Visit.css';
 
 const Visit = (props) => {
     const {visit} = props;
-    const visitingCountries = visit.map(country => {
+    const visitingCountries = visit.map((country, index) => {
         return(
-            <div className="row mt-4 w-100 align-items-center">
+            <div key={index} className="row mt-4 w-100 align-items-center">
                 <div className="col-4 d-flex justify-content-end ">
                     <img className="img-fluid visit-img " src={country.picture} alt="" />
                 </div>
@@ -13,7 +13,7 @@ const Visit = (props) => {
                     <h6 >{country.country}</h6>
                 </div>
                 <div className="col-4 ">
-                    <i class="fa-solid fa-trash font-awesome "></i>
+                    <i className="fa-solid fa-trash font-awesome "></i>
                 </div>
             </div>
         )
