@@ -2,7 +2,7 @@ import React from 'react';
 import './Countries.css';
 
 const Countries = (props) => {
-    const {picture, budget, country} = props;
+    const {picture, budget, country, addToVisit} = props;
     return (
             <div className="col-12 col-lg-4  country-container">
                     <div className="card">
@@ -14,7 +14,7 @@ const Countries = (props) => {
                             <h6 className="text-center">Budget: $ {budget}</h6>                 
                         </div>
                         <div className="d-flex justify-content-center">
-                        <button className="btn btn-success px-5 visit-button">
+                        <button onClick={() => addToVisit(props)} className="btn btn-success px-5 visit-button">
                         Visit Now 
                         </button>  
                     </div> 

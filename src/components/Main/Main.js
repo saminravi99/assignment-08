@@ -7,6 +7,18 @@ const Main = () => {
 
     const [countries, setCountries] = useState([]);
 
+    const [visit, setVisit] = useState([]);
+
+    console.log(visit);
+
+    const addToVisit = (props) => {
+        if(visit.length < 4){
+        setVisit([...visit, props]);
+        } else{
+            alert("You can only choose 4 countries to visit");
+        }
+    }
+
     useEffect(() => {
         fetch(`data.json`)
             .then(res => res.json())
@@ -18,6 +30,7 @@ const Main = () => {
             <Countries
                 key={country.id}
                 {...country}
+                addToVisit={addToVisit}
             ></Countries>
         )
     })
@@ -30,7 +43,9 @@ const Main = () => {
                 </div>
             </div>
             <div className="col col-md-3 mx-auto mt-lg-0 mt-4 visiting-list">
-                <Visit></Visit>
+                <Visit
+                    visit={visit}
+                ></Visit>
             </div>
         </div>
     );
