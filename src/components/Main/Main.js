@@ -2,6 +2,7 @@ import "./Main.css";
 import React, { useEffect, useState } from 'react';
 import Countries from "../Countries/Countries";
 import Visit from "../Visit/Visit";
+import { addToDb } from "../../utilities/localStorage";
 
 const Main = () => {
 
@@ -9,11 +10,12 @@ const Main = () => {
 
     const [visit, setVisit] = useState([]);
 
+    console.log(visit);
+
     const [random, setRandom] = useState(-1);
 
-    console.log(random);
+    // console.log(random);
 
-    // console.log(visit);
 
     //Function to Add the visitng Countries
 
@@ -28,6 +30,8 @@ const Main = () => {
 
         } else if (!exist) {
             newVisit = [...visit, props];
+            addToDb (props.id);
+
         } else {
             alert("You have already chosen this country");
             visit.filter(country => country.country !== props.country);
@@ -68,6 +72,16 @@ const Main = () => {
         setRandom(-1);
     }
 
+    //Function to remove a country from the list of visiting countries
+
+    const removeCountry = (visit, index) => {
+        let newVisit = [...visit];
+        newVisit.splice(index, 1);
+        setVisit(newVisit);        
+    }
+
+    console.log(visit);
+
 
     return (
         <div className="row d-flex flex-lg-row flex-column-reverse mt-4 mx-auto">
@@ -82,6 +96,7 @@ const Main = () => {
                     chooseRandom={chooseRandom}
                     random={random}
                     clearList={clearList}
+                    removeCountry={removeCountry}
                 ></Visit>
             </div>
         </div>

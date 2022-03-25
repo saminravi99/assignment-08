@@ -3,8 +3,8 @@ import './Visit.css';
 
 const Visit = (props) => {
     
-    const {visit, chooseRandom, random, clearList} = props;
-    console.log(random);
+    const {visit, chooseRandom, random, clearList, removeCountry} = props;
+    
     const visitingCountries = visit.map((country, index) => {
         return(
             <div key={index} className="row mt-4 w-100 align-items-center">
@@ -15,7 +15,7 @@ const Visit = (props) => {
                     <h6 >{country.country}</h6>
                 </div>
                 <div className="col-4 ">
-                    <i className="fa-solid fa-trash font-awesome "></i>
+                    <i onClick={() => removeCountry(props.visit, index)} className="fa-solid fa-trash font-awesome "></i>
                 </div>
             </div>
         )
@@ -38,7 +38,7 @@ const Visit = (props) => {
                             <h6 >{getRandomCountry.country}</h6>
                         </div>
                         <div className="col-4 ">
-                            <i className="fa-solid fa-trash font-awesome "></i>
+                            <i class="fa-solid fa-plane-departure"></i>
                         </div>
                     </div>
                     }
