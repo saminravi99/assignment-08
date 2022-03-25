@@ -10,11 +10,8 @@ const Main = () => {
 
     const [visit, setVisit] = useState([]);
 
-    console.log(visit);
 
     const [random, setRandom] = useState(-1);
-
-
 
     //Function to Add the visiting Countries
 
@@ -37,7 +34,6 @@ const Main = () => {
             newVisit = [...visit];
         }
 
-        
         setVisit(newVisit);
     }
 
@@ -53,6 +49,7 @@ const Main = () => {
             .then(res => res.json())
             .then(data => setCountries(data));
     }, []);
+
 
     //Retrieve the visiting countries from the local storage
 
@@ -76,6 +73,7 @@ const Main = () => {
         )
     })
 
+
     //Function to clear the list of visiting countries
 
     const clearList = () => {
@@ -83,6 +81,7 @@ const Main = () => {
         setRandom(-1);
         clearCountry();
     }
+
 
     //Function to remove a country from the list of visiting countries
 
@@ -93,9 +92,7 @@ const Main = () => {
         removeFromDb(visit[index].id);       
     }
 
-    console.log(visit);
-
-
+    
     return (
         <div className="row d-flex flex-lg-row flex-column-reverse mt-4 mx-auto">
             <div className="col col-md-9 mt-lg-0 mt-5 country-list">

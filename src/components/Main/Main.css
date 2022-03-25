@@ -1,17 +1,6 @@
-/* .country-list{
-    width: 100%;
-} */
-
 .country-list{
-    /* border: 2px solid red; */
     margin: 0 auto;
 }
-
-
-/* .visiting-list{ */
-    /* border: 3px solid rgb(14, 236, 99); */
-    /* color: rgb(224, 19, 19); */
-/* } */
 
 .each-country{
     display: grid;

@@ -1,9 +1,5 @@
 .country-container{
-    /* border: 2px solid red; */
-    /* background-color: #f5f5f5; */
-    /* margin: 30px 20px; */
     padding: 10px;
-    /* width: 25%; */
 }
 
 .card{
@@ -13,7 +9,6 @@
 }
 
 .img-container{
-    /* width: 180px; */
     display: flex;
     justify-content: center;
     padding: 10px 10px;

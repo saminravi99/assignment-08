@@ -43,9 +43,9 @@ const Visit = (props) => {
                     </div>
                     }
                 </div>
-                <div className="d-flex flex-column align-items-center btn-div mx-5">
-                    <button onClick={chooseRandom} className="btn btn-primary px-5 mb-4">Choose 1 Country To Visit</button>
-                    <button onClick={clearList}className="btn btn-danger px-5">Choose Again</button>
+                <div className="d-flex flex-column align-items-center btn-div ms-5">
+                    <button onClick={chooseRandom} className="btn btn-primary px-5 py-2 mb-4">Vsit A Country <i class="fa-solid fa-earth-americas ms-2 "></i> </button>
+                    <button onClick={clearList}className="btn btn-danger py-2 px-5">Choose Again <i class="fa-solid fa-clipboard-list ms-2"></i></button>
                 </div>
 
             </div>
