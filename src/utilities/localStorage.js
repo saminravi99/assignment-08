@@ -2,65 +2,65 @@
 
 
 // Adding Products to Local Storage
-let shoppingCart;
+let visitingCountry;
 
 const addToDb = (id) => {
 
-    if(localStorage.getItem("shopping-cart")){
-        shoppingCart = JSON.parse(localStorage.getItem("shopping-cart"));
+    if(localStorage.getItem("visiting-country")){
+        visitingCountry = JSON.parse(localStorage.getItem("visiting-country"));
     }else{
-        shoppingCart = {};
+        visitingCountry = {};
     }
 
-    if(!shoppingCart[id]){
-        shoppingCart[id] = 1;
+    if(!visitingCountry[id]){
+        visitingCountry[id] = 1;
     }else{
-        shoppingCart[id] = shoppingCart[id] + 1;
+        visitingCountry[id] = visitingCountry[id] + 1;
     }
 
-    localStorage.setItem("shopping-cart", JSON.stringify(shoppingCart));
+    localStorage.setItem("visiting-country", JSON.stringify(visitingCountry));
 }
 
 
 // Removing Products from Local Storage
 
 const removeFromDb = (id) => {
-    if(localStorage.getItem("shopping-cart")){
-        shoppingCart = JSON.parse(localStorage.getItem("shopping-cart"));
+    if(localStorage.getItem("visiting-country")){
+        visitingCountry = JSON.parse(localStorage.getItem("visiting-country"));
     }else{
-        shoppingCart = {};
+        visitingCountry = {};
     }
 
-    if(shoppingCart[id] > 1 && shoppingCart[id]){
-        shoppingCart[id] = shoppingCart[id] - 1;
+    if(visitingCountry[id] > 1 && visitingCountry[id]){
+        visitingCountry[id] = visitingCountry[id] - 1;
     }
     else{
-        delete shoppingCart[id];
+        delete visitingCountry[id];
     }
 
-    localStorage.setItem("shopping-cart", JSON.stringify(shoppingCart));
+    localStorage.setItem("visiting-country", JSON.stringify(visitingCountry));
 }
 
-const clearCart = () => {
-    localStorage.removeItem("shopping-cart");
+const clearCountry = () => {
+    localStorage.removeItem("visiting-country");
 }
 
 
-//Loading Cart from Local storage
+//Loading Visiting Countries from Local storage
 
-const getStoredCart = () => {
-    if(localStorage.getItem("shopping-cart")){
-        shoppingCart = JSON.parse(localStorage.getItem("shopping-cart"));
+const getStoredCountry = () => {
+    if(localStorage.getItem("visiting-country")){
+        visitingCountry = JSON.parse(localStorage.getItem("visiting-country"));
     }else{
-        shoppingCart = {};
+        visitingCountry = {};
     }
-    return shoppingCart;
+    return visitingCountry;
 }
 
 export {
     addToDb,
-    getStoredCart,
-    clearCart,
+    getStoredCountry,
+    clearCountry,
     removeFromDb
 }
 

@@ -2,7 +2,7 @@ import "./Main.css";
 import React, { useEffect, useState } from 'react';
 import Countries from "../Countries/Countries";
 import Visit from "../Visit/Visit";
-import { addToDb, clearCart, getStoredCart } from "../../utilities/localStorage";
+import { addToDb, clearCountry, getStoredCountry } from "../../utilities/localStorage";
 
 const Main = () => {
 
@@ -14,7 +14,6 @@ const Main = () => {
 
     const [random, setRandom] = useState(-1);
 
-    // console.log(random);
 
 
     //Function to Add the visitng Countries
@@ -58,7 +57,7 @@ const Main = () => {
     //Retrieve the visiting countries from the local storage
 
     useEffect(() => {
-        const storedCountry = getStoredCart();
+        const storedCountry = getStoredCountry();
             for (const id in storedCountry) {
                 const addedCountry = countries.find(country => country.id === id);
                 if(addedCountry){
@@ -82,7 +81,7 @@ const Main = () => {
     const clearList = () => {
         setVisit([]);
         setRandom(-1);
-        clearCart();
+        clearCountry();
     }
 
     //Function to remove a country from the list of visiting countries
