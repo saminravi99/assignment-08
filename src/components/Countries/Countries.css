@@ -1,0 +1,29 @@
+.country-container{
+    border: 2px solid red;
+    /* background-color: #f5f5f5; */
+    /* margin: 30px 20px; */
+    padding: 10px;
+    /* width: 25%; */
+}
+
+.card{
+    box-shadow: 0px 0px 10px #ccc;
+    padding: 10px;
+    margin: 10px;
+}
+
+.img-container{
+    /* width: 180px; */
+    display: flex;
+    justify-content: center;
+    padding: 10px 10px;
+    
+}
+
+.img-container > img{
+    border-radius: 5px;
+}
+.info-container{
+    padding: 10px;
+}
+
