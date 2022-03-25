@@ -2,7 +2,7 @@ import "./Main.css";
 import React, { useEffect, useState } from 'react';
 import Countries from "../Countries/Countries";
 import Visit from "../Visit/Visit";
-import { addToDb, clearCountry, getStoredCountry } from "../../utilities/localStorage";
+import { addToDb, clearCountry, getStoredCountry, removeFromDb } from "../../utilities/localStorage";
 
 const Main = () => {
 
@@ -16,7 +16,7 @@ const Main = () => {
 
 
 
-    //Function to Add the visitng Countries
+    //Function to Add the visiting Countries
 
     const addToVisit = (props) => {
         let newVisit = []
@@ -89,7 +89,8 @@ const Main = () => {
     const removeCountry = (visit, index) => {
         let newVisit = [...visit];
         newVisit.splice(index, 1);
-        setVisit(newVisit);        
+        setVisit(newVisit); 
+        removeFromDb(visit[index].id);       
     }
 
     console.log(visit);
