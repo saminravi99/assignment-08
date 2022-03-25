@@ -3,7 +3,7 @@ import './Visit.css';
 
 const Visit = () => {
     return (
-        <div >
+        <div className="visit-container">
             <div className="mt-4 visit-card">
 
                 <h2 className="text-center pt-4">Select Countries</h2>

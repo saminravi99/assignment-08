@@ -1,3 +1,8 @@
+.visit-container{
+    position: sticky;
+    top: 50px;
+}
+
 .visit-card{
     min-height: 70vh;
     /* border: 2px solid blue; */
