@@ -14,6 +14,11 @@
     height: 40px;
     border-radius: 50%;
 }
+.modal-img{
+    width: 70px;
+    height: 70px;
+    border-radius: 50%;
+}
 
 .btn-div{
     position: absolute;
@@ -22,4 +27,31 @@
 
 .font-awesome{
     cursor: pointer;
+}
+
+.modal{
+    z-index: 99999 !important;
+    /* position: absolute; */
+}
+
+.modal-content{
+    z-index: 99999 !important;
+}
+
+.modal-backdrop {
+    position: absolute;
+    top: -10000px;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    z-index: 0;
+    background-color: transparent;
+}
+.modal-backdrop.in {
+    filter: alpha(opacity=50);
+    opacity: 0;
+}
+
+.modal-icon{
+    font-size: 24px;
 }
