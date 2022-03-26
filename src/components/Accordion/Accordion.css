@@ -1,15 +1,4 @@
-
-
 .text{
     text-align: justify;
 }
 
-@media screen and (max-width: 480px) {
-  .text-width{
-    max-width: 100% !important;
-  }
-  .img-width{
-    max-width: 100% !important;
-  }
-
-}
