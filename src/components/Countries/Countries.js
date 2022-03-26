@@ -15,7 +15,7 @@ const Countries = (props) => {
                         </div>
                         <div className="d-flex justify-content-center">
                         <button onClick={() => addToVisit(props)} className="btn btn-success px-5 visit-button">
-                        Visit Now 
+                        Visit Now <i className="fa-solid fa-paper-plane ms-1"></i>
                         </button>  
                     </div> 
                 </div>
