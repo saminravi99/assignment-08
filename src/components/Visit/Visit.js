@@ -15,7 +15,7 @@ const Visit = (props) => {
                     <h6 >{country.country}</h6>
                 </div>
                 <div className="col-4 ">
-                    <i onClick={() => removeCountry(props.visit, index)} className="fa-solid fa-trash font-awesome "></i>
+                    <i onClick={() => removeCountry(visit, index)} className="fa-solid fa-trash font-awesome "></i>
                 </div>
             </div>
         )
